@@ -343,3 +343,7 @@ healthchecksdb
 /Refs/Beat Saber_Data/Managed/*
 !Refs/Beat Saber_Data/Managed/IPA*
 /Refs/Plugins/OBSControl.dll
+
+# Release build staging/artifacts (uploaded to GitHub Releases, not tracked)
+/dist/*.zip
+/dist/_pkg-*/

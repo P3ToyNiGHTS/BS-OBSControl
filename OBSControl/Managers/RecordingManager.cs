@@ -117,16 +117,18 @@ internal class RecordingManager : IInitializable, IDisposable
 
             if (!recordingCurrentLevel) return;
 
+            // The restart action only governs what happens when the song is restarted.
+            // Quitting to the menu or finishing the song always stops the recording.
+            var levelWasRestarted = levelCompletionResults.LevelEndAction is LevelCompletionResults.LevelEndAction.Restart;
             var restartAction = pluginConfig.RestartAction;
 
-            if (levelCompletionResults.LevelEndAction is LevelCompletionResults.LevelEndAction.Restart
-                && restartAction is RestartAction.ContinueRecording)
+            if (levelWasRestarted && restartAction is RestartAction.ContinueRecording)
             {
                 // Keep recording and do nothing
                 return;
             }
 
-            Task.Run(() => StopRecording(restartAction is RestartAction.RestartRecording));
+            Task.Run(() => StopRecording(levelWasRestarted && restartAction is RestartAction.RestartRecording));
         }
         catch (Exception ex)
         {
