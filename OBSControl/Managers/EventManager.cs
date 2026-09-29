@@ -78,7 +78,7 @@ internal class EventManager : IInitializable, IDisposable
     
     private void ObsDisconnected(object sender, ObsDisconnectionInfo disconnectionInfo)
     {
-        Plugin.Log.Info($"OBS Disconnected: {disconnectionInfo.WebsocketDisconnectionInfo.CloseStatusDescription}");
+        Plugin.Log.Info($"OBS Disconnected: {disconnectionInfo.DisconnectReason}");
         ConnectionStateChanged?.Invoke(false);
         
         pollStatsTokenSource.Cancel();

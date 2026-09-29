@@ -1,5 +1,6 @@
 ﻿using OBSControl.HarmonyPatches;
 using OBSControl.Managers;
+using OBSControl.Utilities;
 using OBSWebsocketDotNet;
 using Zenject;
 
@@ -17,9 +18,13 @@ internal class AppInstaller : Installer
     public override void InstallBindings()
     {
         Container.BindInstance(pluginConfig).AsSingle();
-        
+
+        //var obsWebsocket = new OBSWebsocket();
+        //obsWebsocket.Logger = new IpaLoggerAdapter<OBSWebsocket>(Plugin.Log);
+        //Container.Bind<IOBSWebsocket>().FromInstance(obsWebsocket);
+
         Container.Bind<IOBSWebsocket>().FromInstance(new OBSWebsocket());
-        
+
         // OBS Managers
         Container.BindInterfacesAndSelfTo<ConnectionManager>().AsSingle();
         Container.BindInterfacesAndSelfTo<EventManager>().AsSingle();

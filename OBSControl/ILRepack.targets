@@ -12,12 +12,8 @@
     </PropertyGroup>
     <ItemGroup>
       <InputAssemblies Include="obs-websocket-dotnet.dll" />
-      <InputAssemblies Include="Websocket.Client.dll" />
       <InputAssemblies Include="Microsoft.Extensions.Logging.Abstractions.dll" />
-      <InputAssemblies Include="System.Reactive.dll" />
-      <InputAssemblies Include="System.Threading.Channels.dll" />
       <InputAssemblies Include="System.Threading.Tasks.Dataflow.dll" />
-      <InputAssemblies Include="System.Threading.Tasks.Extensions.dll" />
       <InputAssemblies Include="System.Runtime.CompilerServices.Unsafe.dll" />
     </ItemGroup>
     <ItemGroup>
