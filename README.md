@@ -1,6 +1,22 @@
-# OBSControl
+﻿# OBSControl
 
 A Beat Saber mod to automatically start/stop recording in OBS when you play a song.
+
+---
+
+> 💡 **Fork Notice**
+> This repository is a fork of [izunya/OBSControl](https://github.com/izunya/OBSControl) with custom modifications.
+
+### Lineage
+- **Original Creator:** [Zingabopp/OBSControl](https://github.com/Zingabopp/OBSControl)
+- **Upstream Forks:** [qqrz997/OBSControl](https://github.com/qqrz997/OBSControl) ➔ [izunya/OBSControl](https://github.com/izunya/OBSControl)
+
+### Modifications in this Fork
+- **[Library Replacement]:** The official [BarRaider/obs-websocket-dotnet](https://github.com/BarRaider/obs-websocket-dotnet) library has become incompatible with the Beat Saber environment due to recent updates. To resolve this and ensure full compatibility, the WebSocket communication layer has been swapped and migrated to **[obs-websocket-bs](https://github.com/P3ToyNiGHTS/obs-websocket-bs)** (a dedicated version tailored specifically for Beat Saber).
+
+Thank you to all the original developers for their incredible foundations!
+
+---
 
 ## Installation
 
